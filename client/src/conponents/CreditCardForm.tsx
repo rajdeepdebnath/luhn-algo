@@ -14,12 +14,17 @@ const CreditCardForm = ({ children }: Props) => {
     recaptchaRef.current?.reset();
   };
 
+  const handleChange = (value: any) => {
+    console.log(value);
+  };
+
   return (
     <form onSubmit={handleSubmit}>
       {children}
       <ReCAPTCHA
         ref={recaptchaRef}
         sitekey="6Lc4jhonAAAAALZX5oEmOOKnZPbOV1a8r3XIrU2W"
+        onChange={handleChange}
       />
     </form>
   );
