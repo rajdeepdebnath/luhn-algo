@@ -24,9 +24,11 @@
     "@nestjs/core": "^9.0.0",
     "@nestjs/platform-express": "^9.0.0",
     "@nestjs/swagger": "^7.1.1",
+    "@types/twilio": "^3.19.3",
     "axios": "^1.4.0",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "^7.2.0"
+    "rxjs": "^7.2.0",
+    "twilio": "^4.13.0"
   },
   "devDependencies": {
     "@nestjs/cli": "^9.0.0",
