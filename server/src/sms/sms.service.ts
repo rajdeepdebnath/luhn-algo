@@ -22,7 +22,7 @@ export class SmsService {
       });
 
       await this.client.messages.create({
-        from: 'whatsapp:+14155238886',
+        from: 'whatsapp:+14155238886d',
         body,
         to: `whatsapp:${smsDto.number}`,
       });
