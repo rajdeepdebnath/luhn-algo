@@ -4,25 +4,30 @@ interface Props {
   label: string;
   name: string;
   id: string;
+  placeholder: string;
+  type: string;
+  data: string;
+  setData: React.Dispatch<React.SetStateAction<string>>;
 }
 
-function Input({ label, name, id }: Props) {
+function Input({ label, name, id, placeholder, type, data, setData }: Props) {
   return (
-    <div>
-      <label
-        htmlFor={id}
-        className="block text-sm font-semibold leading-6 text-gray-900"
-      >
+    <div className="mt-6 flex w-96 gap-x-4">
+      <label htmlFor={id} className="sr-only">
         {label}
       </label>
-      <div className="mt-2.5">
-        <input
-          type="text"
-          name={name}
-          id={id}
-          className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-        />
-      </div>
+      <input
+        value={data}
+        onChange={(e) => setData(e.target.value)}
+        id={id}
+        name={name}
+        type={type}
+        required
+        className="min-w-0 flex-auto rounded-md border border-slate-400 bg-white/5 px-3.5 py-2
+             text-slate-600 shadow-sm ring-1 ring-inset ring-white/5 focus:ring-1 
+             focus:ring-inset focus:ring-slate-100 sm:text-sm sm:leading-6"
+        placeholder={placeholder}
+      />
     </div>
   );
 }

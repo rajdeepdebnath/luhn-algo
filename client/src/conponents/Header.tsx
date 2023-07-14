@@ -7,8 +7,8 @@ export default function Header() {
       >
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
-            <img className="h-5 w-auto" src="logo.png" alt="" />
+            <span className="sr-only">Rajdeep - Credit card verification</span>
+            <img className="h-8 w-auto" src="email2.png" alt="" />
           </a>
         </div>
         <div className="flex lg:hidden">

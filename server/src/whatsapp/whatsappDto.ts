@@ -1,4 +1,4 @@
-export class SmsDto {
+export class WhatsappDto {
   number: string;
   text: string;
 }

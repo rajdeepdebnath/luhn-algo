@@ -1,36 +1,24 @@
 import { Injectable } from '@nestjs/common';
 import { ValidationService } from 'src/validation/validation.service';
-import { Twilio, twiml } from 'twilio';
+import { twiml } from 'twilio';
 
 @Injectable()
 export class WebhookService {
-  client: Twilio;
+  constructor(private validationService: ValidationService) {}
 
-  constructor(private validationService: ValidationService) {
-    this.client = new Twilio(
-      'AC9e751db84a8f50a747c7ec6820657c70',
-      'aceaaa639c6001bc9198d629e92779bc',
-    );
-  }
-
-  getSmsResponse() {
+  getResponse(body: string) {
     const MessagingResponse = twiml.MessagingResponse;
-
+    let message = null;
     const response = new MessagingResponse();
-    const message = response.message('Your credit is being verified...!');
-    return message.toString();
-  }
+    try {
+      let isValid = this.validationService.validateCreditCard(Number(body));
 
-  getWhatsappResponse(body: string) {
-    console.log(body);
-
-    let isValid = this.validationService.validateCreditCard(Number(body));
-    const MessagingResponse = twiml.MessagingResponse;
-
-    const response = new MessagingResponse();
-    const message = response.message(
-      `Credit card ${isValid ? 'valid' : 'invalid'}`,
-    );
+      message = response.message(
+        `Credit card ${isValid ? 'valid' : 'invalid'}`,
+      );
+    } catch (error) {
+      message = response.message('Error! Incorrect message format!');
+    }
     return message.toString();
   }
 }

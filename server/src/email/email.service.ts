@@ -7,12 +7,12 @@ import { EmailDto } from './emailDto';
 export class EmailService {
   constructor() {}
 
-  async sendWelcomeEmail(emailDto: EmailDto) {
+  async sendEmail(emailDto: EmailDto) {
     const options = {
       from: 'admin@rajd.info',
       to: emailDto.email,
-      subject: 'Welcome to CVV!!!',
-      text: 'Welcome',
+      subject: 'Your CVV Result!!!',
+      text: 'CVV Result!!!',
       html: '',
     };
 
@@ -20,7 +20,11 @@ export class EmailService {
       const html = await readFile('email/welcome.html', {
         encoding: 'utf8',
       });
-      options.html = html.replace('$$__name__$$', emailDto.name);
+      let bgcolor = emailDto.isValid ? '#3c8611' : '#742326';
+      options.html = html
+        .replace('$$__LINK__$$', process.env.REACT_DEPLOYED_URL)
+        .replace('$$__BGCOLOR__$$', bgcolor)
+        .replace('$$__TEXT__$$', emailDto.text);
 
       const body = Object.keys(options)
         .map((key, index) => `${key}=${encodeURIComponent(options[key])}`)
@@ -32,7 +36,7 @@ export class EmailService {
         {
           auth: {
             username: 'api',
-            password: 'f8c45e4d377cb40449253af2eaf583e3-262b213e-3def9f44',
+            password: process.env.MAILGUN_API_KEY,
           },
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded',

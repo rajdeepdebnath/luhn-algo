@@ -4,6 +4,7 @@ import Loading from "./Loading";
 import Success from "./Success";
 import Invalid from "./Invalid";
 import axios from "axios";
+import CommunicationButtons from "./CommunicationButtons";
 
 const CreditCardForm = () => {
   const [loading, setLoading] = useState<boolean>(false);
@@ -34,6 +35,9 @@ const CreditCardForm = () => {
 
   const handleChange = (value: any) => {
     setRecaptcha(value);
+    if (value === null) {
+      handleReset();
+    }
   };
 
   const handleTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -107,27 +111,13 @@ const CreditCardForm = () => {
           />
         </div>
       </div>
-      <div
-        className={`mt-10 flex items-center justify-center gap-x-6 transform transition-all duration-300 ease-linear ${
-          result !== null ? "opacity-100" : "opacity-0"
-        }`}
-      >
-        <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
-          Email
-        </button>
-        <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
-          SMS
-        </button>
-        <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
-          Whats APP
-        </button>
-        <button
-          onClick={handleReset}
-          className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
-        >
-          Reset
-        </button>
-      </div>
+      {creditCard && (
+        <CommunicationButtons
+          creditCard={creditCard}
+          result={result}
+          handleReset={handleReset}
+        />
+      )}
     </form>
   );
 };

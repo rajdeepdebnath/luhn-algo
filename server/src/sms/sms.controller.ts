@@ -9,7 +9,7 @@ export class SmsController {
   constructor(private smsService: SmsService) {}
 
   @Post()
-  async sendWelcomeSms(@Body() smsDto: SmsDto) {
-    await this.smsService.sendwelcomeSms(smsDto);
+  async sendSms(@Body() smsDto: SmsDto) {
+    await this.smsService.sendSms(smsDto);
   }
 }

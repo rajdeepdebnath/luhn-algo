@@ -15,8 +15,6 @@ export class ValidationService {
       }
     }
 
-    sum += +digitArr[i];
-
     return sum !== 0 && sum % 10 === 0;
   }
 }
