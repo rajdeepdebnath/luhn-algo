@@ -1,4 +1,4 @@
-import { Controller, Get, Query } from '@nestjs/common';
+import { Controller, Get, Query, ParseIntPipe } from '@nestjs/common';
 import { ValidationService } from './validation.service';
 import { ApiTags } from '@nestjs/swagger';
 
@@ -8,7 +8,9 @@ export class ValidationController {
   constructor(private validationService: ValidationService) {}
 
   @Get('/')
-  validateCreditCard(@Query('creditCardNo') creditCardNo: number) {
+  validateCreditCard(
+    @Query('creditCardNo', ParseIntPipe) creditCardNo: number,
+  ) {
     return this.validationService.validateCreditCard(creditCardNo);
   }
 }

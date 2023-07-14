@@ -13,7 +13,6 @@ export class ValidationService {
       } else {
         sum += +digitArr[i];
       }
-      console.log(i, sum);
     }
 
     sum += +digitArr[i];

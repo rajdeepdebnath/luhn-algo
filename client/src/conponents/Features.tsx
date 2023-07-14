@@ -4,15 +4,15 @@ const Features = () => {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
           <h2 className="text-base font-semibold leading-7 text-indigo-600">
-            Deploy faster
+            Enhanced Verification
           </h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Everything you need to deploy your app
+            Manage and verify your credit cards
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Quis tellus eget adipiscing convallis sit sit eget aliquet quis.
-            Suspendisse eget egestas a elementum pulvinar et feugiat blandit at.
-            In mi viverra elit nunc.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
+            accusamus perspiciatis alias rem, sit dolorum eaque fugit iste ipsam
+            explicabo!
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
@@ -35,11 +35,11 @@ const Features = () => {
                     />
                   </svg>
                 </div>
-                Push to deploy
+                Instant validation
               </dt>
               <dd className="mt-2 text-base leading-7 text-gray-600">
-                Morbi viverra dui mi arcu sed. Tellus semper adipiscing
-                suspendisse semper morbi. Odio urna massa nunc massa.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum,
+                repellendus.
               </dd>
             </div>
             <div className="relative pl-16">
@@ -60,11 +60,11 @@ const Features = () => {
                     />
                   </svg>
                 </div>
-                SSL certificates
+                Whats App integration
               </dt>
               <dd className="mt-2 text-base leading-7 text-gray-600">
-                Sit quis amet rutrum tellus ullamcorper ultricies libero dolor
-                eget. Sem sodales gravida quam turpis enim lacus amet.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad non
+                itaque laborum libero consequatur nostrum!
               </dd>
             </div>
             <div className="relative pl-16">
@@ -85,11 +85,12 @@ const Features = () => {
                     />
                   </svg>
                 </div>
-                Simple queues
+                SM, Email integration
               </dt>
               <dd className="mt-2 text-base leading-7 text-gray-600">
-                Quisque est vel vulputate cursus. Risus proin diam nunc commodo.
-                Lobortis auctor congue commodo diam neque.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
+                beatae ipsa laborum dolorem illo eius voluptates veniam voluptas
+                neque ratione.
               </dd>
             </div>
             <div className="relative pl-16">
@@ -113,8 +114,8 @@ const Features = () => {
                 Advanced security
               </dt>
               <dd className="mt-2 text-base leading-7 text-gray-600">
-                Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis
-                aliquet hac quis. Id hac maecenas ac donec pharetra eget.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Asperiores deleniti alias provident nam perspiciatis debitis?
               </dd>
             </div>
           </dl>

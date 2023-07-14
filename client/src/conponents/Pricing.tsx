@@ -7,8 +7,8 @@ const Pricing = () => {
             Simple no-tricks pricing
           </h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Distinctio et nulla eum soluta et neque labore quibusdam. Saepe et
-            quasi iusto modi velit ut non voluptas in. Explicabo id ut laborum.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit iste,
+            cum laudantium adipisci suscipit provident.
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
@@ -44,7 +44,7 @@ const Pricing = () => {
                     clipRule="evenodd"
                   />
                 </svg>
-                Private forum access
+                Unlimited credit card verification
               </li>
               <li className="flex gap-x-3">
                 <svg
@@ -59,7 +59,7 @@ const Pricing = () => {
                     clipRule="evenodd"
                   />
                 </svg>
-                Member resources
+                What's App integration
               </li>
               <li className="flex gap-x-3">
                 <svg
@@ -74,7 +74,7 @@ const Pricing = () => {
                     clipRule="evenodd"
                   />
                 </svg>
-                Entry to annual conference
+                SMS, Email integration
               </li>
               <li className="flex gap-x-3">
                 <svg
@@ -89,7 +89,7 @@ const Pricing = () => {
                     clipRule="evenodd"
                   />
                 </svg>
-                Official member t-shirt
+                Auto save card to wallets
               </li>
             </ul>
           </div>
@@ -107,12 +107,9 @@ const Pricing = () => {
                     USD
                   </span>
                 </p>
-                <a
-                  href="#"
-                  className="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                >
+                <button className="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                   Get access
-                </a>
+                </button>
                 <p className="mt-6 text-xs leading-5 text-gray-600">
                   Invoices and receipts available for easy company reimbursement
                 </p>
