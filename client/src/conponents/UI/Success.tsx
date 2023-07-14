@@ -6,7 +6,7 @@ const Success = ({ success }: Props) => {
   return (
     <div
       role="status"
-      className={` transform transition-all duration-300 ease-linear ${
+      className={`absolute right-0 top-1/3 transform transition-all duration-300 ease-linear ${
         success ? "opacity-100" : "opacity-0"
       }`}
     >

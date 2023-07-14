@@ -85,7 +85,7 @@ const Features = () => {
                     />
                   </svg>
                 </div>
-                SM, Email integration
+                SMS, Email integration
               </dt>
               <dd className="mt-2 text-base leading-7 text-gray-600">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Input from "./Input";
-import ButtonAction from "./ButtonAction";
-import Modal from "./Modal";
+import Input from "../UI/Input";
+import ButtonAction from "../UI/ButtonAction";
+import Modal from "../UI/Modal";
 import axios from "axios";
-import Loading from "./Loading";
+import Loading from "../UI/Loading";
 
 interface Props {
   creditCard: number;
@@ -58,23 +58,18 @@ const CommunicationButtons = ({ creditCard, result, handleReset }: Props) => {
 
   const handleSend = async (
     type: string,
-    data: {},
+    data: object,
     setModal: (value: React.SetStateAction<boolean>) => void
   ) => {
     try {
       setLoading(true);
-      let response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/${type}`,
-        {
-          ...data,
-          text: `Credit card no ${creditCard} is ${
-            result ? "Valid" : "Invalid"
-          }.`,
-          isValid: result,
-        }
-      );
-      console.log(response);
-
+      await axios.post(`${import.meta.env.VITE_API_URL as string}/${type}`, {
+        ...data,
+        text: `Credit card no ${creditCard} is ${
+          result ? "Valid" : "Invalid"
+        }.`,
+        isValid: result,
+      });
       setSuccess(true);
       setTimeout(() => {
         setModal(false);
@@ -157,7 +152,7 @@ const CommunicationButtons = ({ creditCard, result, handleReset }: Props) => {
         </Modal>
       )}
       <div
-        className={`mt-10 flex items-center justify-center gap-x-6 transform transition-all duration-300 ease-linear ${
+        className={`mt-10 flex flex-col sm:flex-row gap-3 items-center justify-center gap-x-6 transform transition-all duration-300 ease-linear ${
           result !== null ? "opacity-100" : "opacity-0"
         }`}
       >

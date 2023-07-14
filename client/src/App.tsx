@@ -3,7 +3,7 @@ import Header from "./conponents/Header";
 import Features from "./conponents/Features";
 import Pricing from "./conponents/Pricing";
 import AboutUs from "./conponents/AboutUs";
-import Contact from "./conponents/Contact";
+import Newsletter from "./conponents/Newsletter/Newsletter";
 import Hero from "./conponents/Hero";
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
       <Features />
       <Pricing />
       <AboutUs />
-      <Contact />
+      <Newsletter />
     </div>
   );
 }

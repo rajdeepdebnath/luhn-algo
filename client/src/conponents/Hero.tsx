@@ -1,4 +1,4 @@
-import CreditCardForm from "./CreditCardForm";
+import CreditCardForm from "./CreditCardVerification/CreditCardForm";
 
 const Hero = () => {
   return (

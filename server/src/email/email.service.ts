@@ -5,8 +5,6 @@ import { EmailDto } from './emailDto';
 
 @Injectable()
 export class EmailService {
-  constructor() {}
-
   async sendEmail(emailDto: EmailDto) {
     const options = {
       from: 'admin@rajd.info',
@@ -17,17 +15,17 @@ export class EmailService {
     };
 
     try {
-      const html = await readFile('email/welcome.html', {
+      const html = await readFile('assets/welcome.html', {
         encoding: 'utf8',
       });
-      let bgcolor = emailDto.isValid ? '#3c8611' : '#742326';
+      const bgcolor = emailDto.isValid ? '#3c8611' : '#742326';
       options.html = html
         .replace('$$__LINK__$$', process.env.REACT_DEPLOYED_URL)
         .replace('$$__BGCOLOR__$$', bgcolor)
         .replace('$$__TEXT__$$', emailDto.text);
 
       const body = Object.keys(options)
-        .map((key, index) => `${key}=${encodeURIComponent(options[key])}`)
+        .map((key) => `${key}=${encodeURIComponent(options[key])}`)
         .join('&');
 
       const response = await axios.post(

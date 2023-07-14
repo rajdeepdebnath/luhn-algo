@@ -7,7 +7,7 @@ const ButtonAction = ({ onClick, title }: Props) => {
   return (
     <button
       onClick={onClick}
-      className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
+      className="w-44 sm:w-auto bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
     >
       {title}
     </button>

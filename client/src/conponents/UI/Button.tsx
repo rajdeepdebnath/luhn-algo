@@ -1,6 +1,6 @@
 interface Props {
   title: string;
-  clickHandler: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  clickHandler: (e: React.MouseEvent<HTMLButtonElement>) => Promise<void>;
 }
 
 const Button = ({ title, clickHandler }: Props) => {

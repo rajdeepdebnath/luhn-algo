@@ -6,7 +6,7 @@ interface Props {
   description: string;
 }
 
-const Widget1 = ({ children, title, description }: Props) => {
+const Widget = ({ children, title, description }: Props) => {
   return (
     <div className="flex-1 border-0 mx-1">
       <div className="flex flex-col items-start">
@@ -20,4 +20,4 @@ const Widget1 = ({ children, title, description }: Props) => {
   );
 };
 
-export default Widget1;
+export default Widget;

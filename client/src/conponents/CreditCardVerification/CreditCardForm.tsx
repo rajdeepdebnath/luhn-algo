@@ -1,8 +1,8 @@
 import { useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
-import Loading from "./Loading";
-import Success from "./Success";
-import Invalid from "./Invalid";
+import Loading from "../UI/Loading";
+import Success from "../UI/Success";
+import Invalid from "../UI/Invalid";
 import axios from "axios";
 import CommunicationButtons from "./CommunicationButtons";
 
@@ -17,32 +17,34 @@ const CreditCardForm = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      let val = recaptchaRef.current?.getValue();
+      const val = recaptchaRef.current?.getValue();
       if (val && val.length > 0 && creditCard) {
-        let { data } = await axios.get(
+        const { data }: { data: boolean | null } = await axios.get(
           `${
-            import.meta.env.VITE_API_URL
+            import.meta.env.VITE_API_URL as string
           }/validation?creditCardNo=${creditCard}`
         );
 
         setResult(data);
       }
     } catch (error) {
+      console.log(error);
     } finally {
       setLoading(false);
     }
   };
 
-  const handleChange = (value: any) => {
+  const handleChange = (value: string | null) => {
     setRecaptcha(value);
     if (value === null) {
-      handleReset();
+      // handleReset();
+      recaptchaRef.current?.reset();
     }
   };
 
   const handleTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let pattern = /^[0-9]*$/;
-    let val = e.target.value;
+    const pattern = /^[0-9]*$/;
+    const val = e.target.value;
     if (val.length > 0 && pattern.test(val)) {
       setCreditCard(Number(val));
     } else if (val.length === 0) {
@@ -69,7 +71,7 @@ const CreditCardForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="mt-6 text-lg leading-8 text-gray-600 flex items-center gap-1">
+      <div className="relative mt-6 text-lg leading-8 text-gray-600 flex justify-center gap-1">
         <label htmlFor="credit-card" className="sr-only">
           Credit card
         </label>
@@ -80,8 +82,8 @@ const CreditCardForm = () => {
           name="creditcard"
           type="text"
           required
-          className="w-4/5 flex-auto rounded-md border border-slate-400 bg-gray-100 px-3.5 py-2
-             text-slate-600 shadow-sm sm:text-sm sm:leading-6"
+          className="w-full md:w-4/5 flex-initial rounded-md border border-slate-400 bg-gray-100 px-3.5 py-2
+             text-slate-600 shadow-sm text-sm sm:text-xs sm:leading-6"
           placeholder="Enter Credit card number"
         />
         <Loading loading={loading} />

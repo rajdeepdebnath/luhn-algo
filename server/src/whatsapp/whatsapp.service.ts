@@ -1,5 +1,4 @@
 import { Injectable } from '@nestjs/common';
-import { Twilio } from 'twilio';
 import { WhatsappDto } from './whatsappDto';
 import { TwilioService } from 'src/twilio/twilio.service';
 

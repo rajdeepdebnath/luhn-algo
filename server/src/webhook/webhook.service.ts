@@ -11,7 +11,7 @@ export class WebhookService {
     let message = null;
     const response = new MessagingResponse();
     try {
-      let isValid = this.validationService.validateCreditCard(Number(body));
+      const isValid = this.validationService.validateCreditCard(Number(body));
 
       message = response.message(
         `Credit card ${isValid ? 'valid' : 'invalid'}`,
