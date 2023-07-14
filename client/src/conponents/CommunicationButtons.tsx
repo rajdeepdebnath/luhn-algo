@@ -46,13 +46,13 @@ const CommunicationButtons = ({ creditCard, result, handleReset }: Props) => {
     setError(false);
   };
 
-  const handleEmailSend = async (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleEmailSend = async () => {
     await handleSend("email", { email: data }, setOpenEmailModal);
   };
-  const handleSmsSend = async (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleSmsSend = async () => {
     await handleSend("Sms", { number: data }, setOpenSmsModal);
   };
-  const handleWhatsAppSend = async (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleWhatsAppSend = async () => {
     await handleSend("Whatsapp", { number: data }, setOpenWhatsappModal);
   };
 
