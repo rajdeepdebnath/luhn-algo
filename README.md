@@ -64,13 +64,12 @@
 
 ### Email
 
-- the sender is admin@rajd.info (it's my own domain)
+- the sender is my domain (it's my own domain)
 - The Email HTML is in `server/email` folder
 - There is a button in the email. It will be green for valid card and red for invalid card.
 - If one `click` on the green button, new tab will be launched with the website url
 - for that please check the entry in `server/.env` file. The key is `REACT_DEPLOYED_URL`
 
-![Email](/z_images/email.jpg "Email")
 
 ### Send SMS
 
@@ -80,15 +79,13 @@
 - Unless your mobile number is verified with twilio you wont receiving any sms. If you would like to test this feature, please let me know.
 - Please do not use any real credit card number as I am using twilio which may save your card number
 
-![Send SMS](/z_images/sms.jpg "Send SMS")
 
 ### Received SMS
 
-![Received SMS](/z_images/sms-received.jpeg "Received SMS")
 
 ### Credit card verification by sending SMS
 
-- One can verify the card by sending only the card no to +19036003258
+- One can verify the card by sending only the card no to twilio no
 - I have configured webhook to process the card no and sent back the result via twilio.
 - This happens within 5/10 seconds
 - But to avail this feature one's mobile no needs to be verified with twilio as I am using twilio trial account
