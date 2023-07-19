@@ -96,4 +96,3 @@
 - One can integrate whats app using this sandbox number
 - Please do not use any real credit card number as I am using twilio which may save your card number
 
-![Whats app](/z_images/whatsapp.jpg "Whats app")
